@@ -14,4 +14,5 @@ public class Arguments {
 	System.out.println(sum);
 	}
 
+	
 }
