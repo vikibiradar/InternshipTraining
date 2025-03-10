@@ -483,3 +483,223 @@ in this if the current object is lesser than the specified object it return (-) 
 in this if the current object is equal than the specified object it return zero value.
 -----------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------
+java.lang.Comparable :-
+public abstract int compareTo(T);
+it is used to sort our own object data. It checks the String ascii code.
+in this if the current object is greater than the specified object it return (+) value.
+in this if the current object is lesser than the specified object it return (-) value.
+in this if the current object is equal than the specified object it return zero value.
+-----------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Map :-It is an interface.
+ In this we enter key and values pair.
+The key should not be duplicate. The value can be duplicate.
+The key and value pair is known as entry.
+Map is useful to search, update or delete elements on the basis of the key.
+-----------------------------------------------------------------------------------
+Map --HashMap,  LinkedHashMap, TreeMap(sorting),HashTable
+-----------------------------------------------------------------------------------
+Set set=hm.entrySet();//
+Iterator itr=set.iterator();
+while(itr.hasNext())
+{
+	Map.Entry en=(Map.Entry<Integer, String>)itr.next();
+	System.out.println(en.getKey()+ "  "+en.getValue());
+}
+---------------------------------------------------------------------------------------------
+HashMap is converted to set because we don't have the Interface Iterator in the HashMap. We have it in Set.
+entrySet() is used to convert the Map into set.
+Map.Entry is a class contain getKey(),getValue()
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+HashMap :- It gives high performance in the total data-structure of java collection framework.
+There are 2 factors which effect the performance of hashmap.
+1)Initial Capacity.
+2)Load Factor.
+------------------------------------------
+1)Initial Capacity is 16 bytes.
+2)It increases automatically when it reaches to the threshold.
+ 3)Initially it is 2 pow 4=16,Then it will 2 pow 5=32,then it will be 2 pow 6=64
+--------------------------------------------------------------------------------------------------------------------------
+Load Factor :- is measured that decides when to increase the HashMap capacity to maintain the get() and put() request.
+---------------------------------------------------------------------------------------------------------
+
+Queue Interface
+------------------------------
+It maintains the first-in-first-out order.
+It can be defined as an ordered list that is used to hold elements in the same order.
+The classes are PriorityQueue, Deque and ArrayDeque .
+----------------------------------------------------------------------------------- 
+ArrayDeque :- It is a class. We can remove and add the elements from both sides.
+It is also called double-ended queue.
+---------------------------------------------------------------------------- 
+EnumMap :- in this we will enter key and value pair.
+---------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+ArrayList and LinkedList Difference
+-----------------------------------------------------------------
+ArrayList :-
+1)It internally use dynamic array to store the elements.
+2)Manipulation of arraylist is slow.
+3)We can add the element at the rear end.
+
+LinkedList:-
+1)It internally use double link list to store the elements.
+2)Manipulation of Linkedlist is faster.
+3)LinkedList class acts like a list and queue.
+4)We can add the element at both the ends.
+-----------------------------------------------------------------------------------
+HashMap and HashTable Difference
+-------------------------------------------------------
+HashMap
+1)It is not-synchronized .(not Thread safe we can use this with threads)
+2)It allows one null key and multiple null values.
+3)This faster than hashTable
+4)It is traversed by Iterator.
+5)It inherits AbstractMap class.
+------------------------------------
+
+
+HashTable
+1)It is synchronized .(Thread safe.we can use with threads)
+2)It doesn't allow any null key or value.
+3)It is slower than HashMap.
+4)It is traversed by Iterator and Enumerator.
+5)It inherits Dictionary class.
+---------------------------------------------------------------------------------------------
+AbstractMap and Dictonary difference
+----------------------------------------------------------
+1)AbstractMap it is the super class of HashMap .
+we can't intanceate the AbstractMap so we have to create object of the HashMap.
+-------------------------------------------
+1)Dictionary it is the super class of HashTable .
+we can't intanceate the Dictionary so we have to create object of the HashTable.
+------------------------------Type Casting----------------------------------------------------
+What is Upcasting?
+Upcasting is when a subclass object (Dog) is assigned to a reference variable of its superclass (Animal).
+It happens automatically (implicit casting).
+Example:
+Animal animal = new Dog();  // Implicit upcasting
+_____________________________________________________________________
+
+What About Downcasting?
+Downcasting is when a superclass reference is cast to a subclass reference.
+Downcasting requires explicit casting.
+
+Animal animal = new Dog();  // Upcasting
+Dog dog = (Dog) animal;     // Explicit downcasting
+dog.fetch();                // Accessing subclass-specific method
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+implicit casting
+---------------------------
+public class CastDemo 
+{
+public static void main(String[] args) 
+{
+byte a=10;//-128 to 127-------------1 byte
+int b=a;//4 bytes
+System.out.println(b);
+}
+}
+---------------------------------------------------------------------
+explicit casting
+----------------------------------------
+public class CastDemo 
+{
+public static void main(String[] args) 
+{
+int a=120;
+byte b=(byte)a;
+System.out.println(b);
+}
+}
+------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+Thread:-It is a sort of execution of instruction.
+single Thread Program:- Till now we were doing single threaded programing the program start execution from the main() till the end.
+------------------------------------------------------------------------------------------------
+Multi Thread Program:-
+Each thread will do some task.
+We can create object of Thread and assign the task.
+In this we will have run() and we will have start() .the start() will call the run().
+For this we can either extends Thread class or implement runnable interface.
+There will be Thread switching .So we will see all the start() execute at the same time and the output will be a mixture of all the task.
+------------------------------------------------------------------------------------------------------
+Thread life cycle
+--------------------------
+new born thread
+start
+runnable(choose the thread)
+running
+block/wait/sleep
+dead(excution is completed)
+------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Methods in Thread class
+---------------------------------------------------------------------------
+1)getName() :- It gets the name of Thread.
+
+2)isAlive() :- It check if the Thread is still running or completed it's execution. It returns Boolean value.
+
+3)run():- Entry point for the thread.
+
+4)start():- It Starts a thread by calling the run().
+
+5)sleep():- In this based on the requirement we can make a thread sleep or wait for a specific time period.
+
+6)setPriority():- we can set the thead priority.
+
+7)getPriority():- we can get the thread priority.
+
+8)MIN_PRIORITY= range (1 to 4)
+NORM_PRIORITY= 5
+MAX_PRIORITY=RANGE(6 to 10)
+
+9)Daemon Thread :- It is a low priority thread which runs in the background doing garbage collection operation.
+
+10)wait() :- The thread will go to wait until some other thread doesnot notify.
+11)notify():- Wake up a thread which is in waiting state.
+12)notifyAll() :- This will wake up all the waiting threads.
+13)join(): When the join() method is invoked, the current thread stops its execution and go into the wait state. The current thread remains in the wait state until the thread on which the join() method is invoked called is dead or the wait for the specified time frame() is over.
+14)yield():-
+----------------------------------------------------------------------------------------------------
+ -------------------------------------------------------------------------
+Syncronized Thread :- One Thread exceute and after its execution the second thread will start execution.
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+File 
+------------------------------------------------------------------------------------------------------
+1)It is used to store and manage data.
+2)Reading and writing of data into a file can be done using byte stream or character stream.(flow from source to destination)
+3)The process of reading and writing object into a file is known as serialization and de-serialization.
+4)we will be using java.io package.
+5)There are 2 types of stream by which we can read and write data into a file.
+a)byte stream
+b)character stream
+Under this byte stream and character stream we have different class.
+6)While working with file we have to handle exception because it throws checked Exception.
+Exceptions :- EOFException, FileNotFoundException, InterruptedIOException, IOException.
+----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+1]Byte stream(10101001001)
+--------------------------------------------
+There are 2 abstract classes.
+--------------------------------------------
+1)InputStream-reading data from the file.
+2)OutputStream-writing data into the file.
+
+we have some classes 
+1)BufferInputStream/BufferOutputStream
+2)FileInputStream/FileOutputStream
+3)ObjectInputStream/ObjectOutputStream ----serialization and de-serialization.
+4)DataInputStream/DataOutputStream ----to read and write primative data type into the file.
+------------------------------------------------------------------
+-------------------------------------------------------------------
+The process of reading and writing object into a file is known as serialization and de-serialization.
+-----------------------------------------------------------------------
+ObjectInputStream/ObjectOutputStream ----serialization and de-serialization.
+-------------------------------------------------------------------------------
+Serializable -it is a marker interface. There will be no abstract method in it.
+------------------------------------
